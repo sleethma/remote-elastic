@@ -1,11 +1,20 @@
+#todo: fix below so they cd into indiv servers root dir
+
 # Deploy Elastic
-./elasticsearch-7.0.1/bin/elasticsearch
+cd elasticsearch-7.0.1/
+./bin/elasticsearch &
+cd ..
 
 # Deploy Kibana
-./kibana-7.0.1-darwin-x86_64/bin/kibana
+cd kibana-7.0.1-darwin-x86_64/
+./bin/kibana &
+cd ..
 
 # Deploy Beats
-metricbeat-7.0.1-darwin-x86_64/metricbeat setup -e
+cd metricbeat-7.0.1-darwin-x86_64/
+./metricbeat setup -e &
+cd ..
 
 # Deploy Logstash
-./logstash-7.0.1/bin/logstash -f config/demo-metrics-pipeline.conf
+cd logstash-7.0.1/
+./bin/logstash -f config/demo-metrics-pipeline.conf &
